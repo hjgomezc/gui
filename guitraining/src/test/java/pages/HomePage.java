@@ -18,11 +18,12 @@ public class HomePage extends BasePage {
     private WebDriver driver;
 
     public HomePage(WebDriver driver){
+        super(driver);
         this.driver = driver;
     }
 
     public ArticlePage search(String query) {
-        WebElement searchInput = driver.findElement(By.id("searchInput"));
+        //WebElement searchInput = driver.findElement(By.id("searchInput"));
         searchInput.sendKeys(query);
         WebDriverWait wait = new WebDriverWait(driver, Long.parseLong("10"));
         wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//*[@id='typeahead-suggestions']//a"), 1));

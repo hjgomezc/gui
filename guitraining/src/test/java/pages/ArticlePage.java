@@ -12,11 +12,12 @@ public class ArticlePage extends BasePage {
     private WebDriver driver;
 
     public ArticlePage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
+        //this.driver = driver;
     }
 
     public String getTitle(){
-        WebElement title = driver.findElement(By.id("firstHeading"));
+       // WebElement title = driver.findElement(By.id("firstHeading"));
         return title.getText();
     }
 }
